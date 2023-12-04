@@ -11,7 +11,7 @@ for _ in range(int(input())):
         if oke: 
             for j in a:
                 if j <= i: 
-                    a.remove(j)
+                    a.remove(j) #remove de tiep tuc so sanh cap so cung index trong 2 list
                     break
                 else: 
                     oke = False

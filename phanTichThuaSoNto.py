@@ -1,7 +1,7 @@
 from math import sqrt
 from tracemalloc import start
 
-def ptich (n):
+def analyze (n):
     res = {}
     for i in range (2, int(sqrt(n)) + 1):
         cou = 0
@@ -19,4 +19,4 @@ def ptich (n):
 
 for t in range(int(input())):
     n = int(input())
-    ptich(n)
+    analyze(n)
