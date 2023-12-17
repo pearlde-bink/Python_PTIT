@@ -20,15 +20,23 @@
 
     print(int(result))"""
 
-# from math import log2
+from math import log2
 
-# BASE = '0123456789ABCDEF'
-# def numberToBase(b, n):
-#     step = int(log2(b)) #calculate the step size to convert into target number
-#     res = '' #to contain result
-#     for i in range(0, len(n), step): #loop from right to left with step = step
-#         res += BASE[int(n[i:i+step][::-1], 2)]
-#     return res[::-1]
-# #reverse
-# for r in range(int(input())):
-#     print(numberToBase(int(input()), input()[::-1]))
+BASE = '0123456789ABCDEF'
+def numberToBase(b, n):
+    step = int(log2(b)) #calculate the step size to convert into target number
+    res = '' #to contain result
+    for i in range(0, len(n), step): #loop from right to left with step = step
+        res += BASE[int(n[i:i+step][::-1], 2)]
+    return res[::-1]
+#reverse
+for r in range(int(input())):
+    print(numberToBase(int(input()), input()[::-1]))
+
+'''
+2
+8
+10010100010010101
+2
+10010100010010101
+'''

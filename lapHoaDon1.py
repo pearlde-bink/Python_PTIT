@@ -1,4 +1,3 @@
-
 id = 1
 class kh:
     tien = 0

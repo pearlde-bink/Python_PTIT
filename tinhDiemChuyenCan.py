@@ -1,46 +1,40 @@
-class student:
-    def __init__(self, msv, name, lop) -> None:
+class hs:
+    def __init__(self, msv, ten, lop) -> None:
         self.msv = msv
-        self.name = name
+        self.ten = ten
         self.lop = lop
         self.diem = 10
-        self.note = ""
-    def output(self):
-        print(self.msv, self.name, self.lop, self.diem, self.note)
-
+        self.stat = ""
+    def print(self):
+        print(self.msv, self.ten, self.lop, self.diem, self.stat)
+        
 class occur:
-    def __init__(self, ma, stat) -> None:
+    def __init__(self, ma, tt) -> None:
         self.ma = ma
-        self.stat = stat
-    def tinh(self):
+        self.tt = tt
+    def sub(self):
         diem = 0
-        s = self.stat
-        for i in range(len(s)):
-            if s[i] == 'm': diem += 1
-            elif s[i] == 'v': diem += 2
+        for i in range(len(self.tt)):
+            if self.tt[i] == 'm': diem += 1
+            elif self.tt[i] == 'v': diem += 2
         return diem
- 
-a = []      
-b = []
+    
+a, b = [], []
 n = int(input())
 for _ in range(n):
-    msv = input()
-    ten = input()
-    lop = input()
-    a.append(student(msv, ten, lop))
-
+    a.append(hs(input(), input(), input()))
 for _ in range(n):
-    ma, status = [x for x in input().split()]
-    b.append(occur(ma, status))
-
-for i in range(n):
-    for j in range(n):
+    m, mm = [i for i in input().split()]
+    b.append(occur(m, mm))
+for i in range(len(a)):
+    for j in range(len(b)):
         if a[i].msv == b[j].ma:
-            a[i].diem -= b[j].tinh()
-            if a[i].diem < 0: a[i].diem = 0
-            if a[i].diem == 0: a[i].note = "KDDK"
+            a[i].diem -= b[j].sub()
+            if a[i].diem <= 0: 
+                a[i].diem = 0
+                a[i].stat = "KDDK" 
 for i in a:
-    i.output()
+    i.print()
         
 """
 3

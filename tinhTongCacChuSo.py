@@ -1,16 +1,24 @@
-import re
+# import re
 
-for t in range(int(input())):
+# for t in range(int(input())):
+#     s = input()
+#     print(*sorted([i for i in s if i.isalpha()]) + [sum([int(i) for i in s if i.isdigit()])], sep='')
+
+for _ in range(int(input())):
     s = input()
-    print(*sorted([i for i in s if i.isalpha()]) + [sum([int(i) for i in s if i.isdigit()])], sep='')
-    
-# for _ in range(int(input())):
-#   n = input()
-#   li = []
-#   tong = 0
-#   for i in n:
-#     if i.isdigit(): tong += int(i) 
-#     else: li.append(i)
-#   li = sorted(li)
-#   li.append(str(tong))
-#   print(''.join(li))
+    a = 0
+    for i in s:
+        if i.isdigit(): 
+            a += int(i)
+            s = s.replace(i, "")
+    s = sorted(s)
+    s += str(a)
+    # print(''.join(s))
+    for i in s:
+        print(i, end = "")
+    print()
+'''
+2
+AC2BEW3
+ACCBA10D2EW30
+'''

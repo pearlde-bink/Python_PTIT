@@ -20,3 +20,7 @@ for k in range(n):
     else:
         print(le[j], end = " ")
         j += 1
+'''
+10
+1 2 3 4 5 6 7 7 9 6
+'''

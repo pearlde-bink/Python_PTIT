@@ -1,9 +1,14 @@
 base = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 for _ in range(int(input())):
     n, m = [int(i) for i in input().split()]
-    result = ""
+    val = ""
     while n:
-        result += base[n%m]
+        val += base[n%m]
         n //= m
-    print(result[::-1])
-    
+    print(val[::-1])
+'''
+3
+10 2
+2021 2
+31 16
+'''

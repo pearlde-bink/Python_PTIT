@@ -24,6 +24,7 @@ for i in range(int(input())):
 a = sorted(a, key=lambda x: -x.price)
 for i in a:
     i.output()
+
 """
 3
 Huynh Van Thanh

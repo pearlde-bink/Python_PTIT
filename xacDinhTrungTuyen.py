@@ -1,35 +1,27 @@
-class tt:
-    def __init__(self, id, name, mut, comp, sub) -> None:
-        self.id = 'GV{:02d}'.format(id)
-        self.name = name
-        self.diem = comp*2 + sub + self.getUT(mut)
-        self.mon = self.getSubject(mut)
-        # if(self.diem >= 18): self.rank = "TRUNG TUYEN"
-        # else: self.rank = "LOAI"
-    def getUT(self, mut):
-        if mut[1] == '1': return 2
-        if mut[1] == '2': return 1.5
-        if mut[1] == '3': return 1
-        return 0
-    def getSubject(self, mut):
-        if mut[0] == 'A':  return 'TOAN'
-        if mut[0] == 'B':  return 'LY'
-        return 'HOA'
-    def getStatus(self):
-        return "TRUNG TUYEN" if self.diem >= 18 else "LOAI"
-        
+class gv:
+    def __init__(self, id, ten, mxt, tin, cmon) -> None:
+        self.ma = "GV{:02d}".format(id)
+        self.ten = ten
+        if mxt[0] == 'A': self.monhoc = "TOAN"
+        elif mxt[0] == 'B': self.monhoc = "LY"
+        else: self.monhoc = "HOA"
+        self.diem = tin*2 + cmon
+        if mxt[1] == '1': self.diem += + 2
+        elif mxt[1] == '2': self.diem += 1.5
+        elif mxt[1] == '3': self.diem += 1
+        # else: self.diem = tin*2 + cmon
+        if self.diem >= 18: self.stat = "TRUNG TUYEN"
+        else: self.stat = "LOAI"
     def print(self):
-        print(self.id, self.name, self.mon, self.diem, self.rank)
-    def __str__(self) -> str:
-        return '{:s} {:s} {:s} {:.1f} {:s}'.format(self.id, self.name, self.mon, self.diem, self.getStatus())
+        print(self.ma, self.ten, self.monhoc, self.diem, self.stat)
 
 a = []
-n = int(input())    
-for i in range(n):
-    a.append(tt(i + 1, input(), input(), float(input()), float(input())))
+for i in range(int(input())):
+    a.append(gv(i+1, input(), input(), float(input()), float(input())))
+a = sorted(a, key=lambda x: -x.diem)
+for i in a:
+    i.print()
  
-print(*sorted(a, key = lambda e: -e.diem), sep = '\n')
-  
 """
 3   
 Le Van Binh
